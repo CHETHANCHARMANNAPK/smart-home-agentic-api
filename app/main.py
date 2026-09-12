@@ -22,6 +22,15 @@ app = FastAPI(
 )
 app.include_router(router, prefix="/api/v1")
 app.include_router(hardware_router, prefix="/api/v1")
+@app.get("/")
+async def root():
+    return {
+        "service": "Smart Home Agentic API",
+        "status": "online",
+        "message": "Agentic smart-home orchestration API is running.",
+        "docs": "/docs",
+        "health": "/health",
+    }
 
 
 @app.get("/health")
