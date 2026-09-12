@@ -1,0 +1,18 @@
+flowchart LR
+    A[User Voice] --> B[ASR\nSpeech to Text]
+    B --> C[FastAPI\nPOST /api/v1/agent]
+    C --> D[Planner\nLocal Mock / Optional LLM]
+    D --> E[Structured AgentPlan]
+    E --> F[Policy-Constrained Executor]
+    F --> G[Status Tools]
+    G --> H{Safety Preconditions\nSatisfied?}
+    H -- No --> I[Safety Intervention]
+    H -- Yes --> J[Action Tools]
+    J --> K[Verification Tools]
+    K --> L[AgentResponse + Trace]
+    I --> L
+    L --> M[TTS\nText to Speech]
+    M --> A
+    G -.-> N[(Mock Home State)]
+    J -.-> N
+    K -.-> N

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="820" viewBox="0 0 1500 820">
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L10,3 L0,6 Z"/></marker></defs>
+<rect width="1500" height="820" fill="white"/>
+<text x="750" y="48" text-anchor="middle" font-family="Arial" font-size="28" font-weight="700">Smart Home Agentic API — High-Level Architecture</text>
+<g font-family="Arial" font-size="17" text-anchor="middle">
+<rect x="40" y="120" width="170" height="70" rx="14" fill="#f3f4f6" stroke="#374151"/><text x="125" y="148">User Voice</text><text x="125" y="173">Audio Trigger</text>
+<rect x="260" y="120" width="170" height="70" rx="14" fill="#f3f4f6" stroke="#374151"/><text x="345" y="148">ASR</text><text x="345" y="173">Speech → Text</text>
+<rect x="480" y="105" width="210" height="100" rx="14" fill="#eef2ff" stroke="#3730a3"/><text x="585" y="138" font-weight="700">FastAPI</text><text x="585" y="164">POST /api/v1/agent</text><text x="585" y="188">Async REST boundary</text>
+<rect x="740" y="105" width="210" height="100" rx="14" fill="#ecfeff" stroke="#0e7490"/><text x="845" y="138" font-weight="700">Planner</text><text x="845" y="164">Local Mock / LLM</text><text x="845" y="188">Structured AgentPlan</text>
+<rect x="1000" y="105" width="250" height="100" rx="14" fill="#fef3c7" stroke="#92400e"/><text x="1125" y="138" font-weight="700">Policy Executor</text><text x="1125" y="164">Validate → Observe → Act</text><text x="1125" y="188">Safety is outside the LLM</text>
+
+<rect x="830" y="300" width="190" height="85" rx="14" fill="#dcfce7" stroke="#166534"/><text x="925" y="333" font-weight="700">Status Tools</text><text x="925" y="360">Windows / Doors / Lights</text>
+<polygon points="1090,292 1220,342 1090,392 960,342" fill="#fff7ed" stroke="#9a3412"/><text x="1090" y="337">Safe?</text><text x="1090" y="359">preconditions</text>
+<rect x="1270" y="300" width="180" height="85" rx="14" fill="#fee2e2" stroke="#991b1b"/><text x="1360" y="333" font-weight="700">Action Tools</text><text x="1360" y="360">Lock / Lights Off</text>
+<rect x="1270" y="500" width="180" height="85" rx="14" fill="#dcfce7" stroke="#166534"/><text x="1360" y="533" font-weight="700">Verification</text><text x="1360" y="560">Re-read device state</text>
+<rect x="1010" y="500" width="190" height="85" rx="14" fill="#f3f4f6" stroke="#374151"/><text x="1105" y="533" font-weight="700">Mock Home State</text><text x="1105" y="560">Simulated devices</text>
+<rect x="730" y="650" width="220" height="75" rx="14" fill="#eef2ff" stroke="#3730a3"/><text x="840" y="681" font-weight="700">AgentResponse</text><text x="840" y="706">Trace + final response</text>
+<rect x="1030" y="650" width="180" height="75" rx="14" fill="#f3f4f6" stroke="#374151"/><text x="1120" y="681" font-weight="700">TTS</text><text x="1120" y="706">Text → Speech</text>
+</g>
+<g stroke="#374151" stroke-width="2.5" fill="none" marker-end="url(#a)">
+<path d="M210 155 H260"/><path d="M430 155 H480"/><path d="M690 155 H740"/><path d="M950 155 H1000"/><path d="M1125 205 V250 H925 V300"/><path d="M1020 342 H960"/><path d="M1220 342 H1270"/><path d="M1090 392 V470 H1360 V500"/><path d="M1360 385 V500"/><path d="M1270 542 H1200"/><path d="M1010 542 H840 V650"/><path d="M950 687 H1030"/><path d="M1030 687 H100"/>
+</g>
+<g font-family="Arial" font-size="15"><text x="1230" y="325">YES</text><text x="1010" y="420">NO → intervene</text></g>
+</svg>
